@@ -5,6 +5,7 @@ const authRoutes = require('./src/routes/auth.route');
 const connectToDB = require('./src/db/db'); 
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./src/routes/user.route');
+const chatRoutes = require('./src/routes/chat.route');
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(cookieParser());
 
 app.use('/api/auth' , authRoutes);
 app.use('/api/users' , userRoutes);
+app.use('/api/chat', chatRoutes);
 
 app.get('/', (req, res) => {
     res.send('Welcome to Streamify Backend!');
